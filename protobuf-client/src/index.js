@@ -1,11 +1,11 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+const {createElement} = require('react');
+const {render} = require('react-dom');
 const createReactClass = require('create-react-class');
 const messages = require('../generated/messages_pb');
 
 let url = path => 'http://localhost:8080' + path;
 
-let App = createReactClass({
+render(createElement(createReactClass({
     getInitialState() {
         return {
             text: '',
@@ -44,25 +44,25 @@ let App = createReactClass({
     },
 
     render() {
-        return React.createElement('table', null,
-            React.createElement('tbody', null,
-                React.createElement('tr', null,
-                    React.createElement('th', null,
-                        React.createElement('input', {
+        return createElement('table', null,
+            createElement('tbody', null,
+                createElement('tr', null,
+                    createElement('th', null,
+                        createElement('input', {
                             value: this.state.text,
                             onChange: e => this.setState({text: e.target.value})
                         })
                     ),
-                    React.createElement('th', null,
-                        React.createElement('button', {
+                    createElement('th', null,
+                        createElement('button', {
                             onClick: () => this.createNote()
                         }, 'Create'),
                     )
                 ),
-                this.state.notes.map(note => React.createElement('tr', {key: note.getId()},
-                    React.createElement('td', null, note.getText()),
-                    React.createElement('td', null,
-                        React.createElement('button', {
+                this.state.notes.map(note => createElement('tr', {key: note.getId()},
+                    createElement('td', null, note.getText()),
+                    createElement('td', null,
+                        createElement('button', {
                             onClick: () => this.deleteNote(note.getId())
                         }, 'Delete'),
                     )
@@ -70,7 +70,4 @@ let App = createReactClass({
             )
         );
     }
-});
-
-
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+})), document.getElementById('root'));
