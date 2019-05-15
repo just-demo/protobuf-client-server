@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package self.ed.messages;
+option java_multiple_files = true;
+
+message NoteForm {
+    string text = 1;
+}
+
+message Note {
+    int64 id = 1;
+    string text = 2;
+}
+
+message Notes {
+    repeated Note notes = 1;
+}

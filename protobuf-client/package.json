@@ -1,0 +1,12 @@
+{
+  "name": "protobuf-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "google-protobuf": "^3.8.0-rc.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sync-request": "^6.1.0"
+  }
+}
