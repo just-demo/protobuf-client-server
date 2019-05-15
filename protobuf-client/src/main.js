@@ -1,5 +1,5 @@
 const request = require('sync-request');
-const messages = require('./generated/messages_pb');
+const messages = require('../generated/messages_pb');
 
 let url = path => 'http://localhost:8080' + path;
 

@@ -8,5 +8,18 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sync-request": "^6.1.0"
+  },
+  "scripts": {
+    "generateProto": "mkdirp generated & protoc --proto_path=../protobuf-messages --js_out=import_style=commonjs,binary:generated messages.proto",
+    "init": "rimraf build & mkdirp build/dist",
+    "copy": "cpx src/*.html build/dist",
+    "bundle": "browserify src/index.js -o build/dist/index.js",
+    "build": "npm run init & npm run copy & npm run bundle",
+    "client": "node src/main.js"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.3"
   }
 }
