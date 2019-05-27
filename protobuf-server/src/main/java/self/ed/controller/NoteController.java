@@ -21,15 +21,10 @@ public class NoteController {
     private AtomicLong idGen = new AtomicLong();
 
     @GetMapping
-    public Notes getAll() {
+    public Notes readAll() {
         return Notes.newBuilder()
                 .addAllNotes(notes.values())
                 .build();
-    }
-
-    @GetMapping("/{id}")
-    public Note get(@PathVariable("id") Long id) {
-        return notes.get(id);
     }
 
     @PostMapping
@@ -42,6 +37,11 @@ public class NoteController {
                 .build();
         notes.put(id, note);
         return note;
+    }
+
+    @GetMapping("/{id}")
+    public Note read(@PathVariable("id") Long id) {
+        return notes.get(id);
     }
 
     @PutMapping("/{id}")
