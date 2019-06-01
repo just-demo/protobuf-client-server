@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package self.ed.messages;
+package demo.messages;
 option java_multiple_files = true;
 
 message NoteForm {

@@ -1,5 +1,7 @@
-package self.ed.client;
+package demo.client;
 
+import demo.messages.Note;
+import demo.messages.Notes;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
@@ -8,9 +10,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.HttpClients;
-import self.ed.messages.Note;
-import self.ed.messages.NoteForm;
-import self.ed.messages.Notes;
+import demo.messages.NoteForm;
 
 import static org.apache.http.HttpHeaders.CONTENT_TYPE;
 

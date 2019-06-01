@@ -1,5 +1,8 @@
-package self.ed.controller;
+package demo.controller;
 
+import demo.messages.Note;
+import demo.messages.NoteForm;
+import demo.messages.Notes;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import self.ed.messages.Note;
-import self.ed.messages.NoteForm;
-import self.ed.messages.Notes;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -1,9 +1,9 @@
-package self.ed.controller;
+package demo.controller;
 
+import demo.messages.Note;
+import demo.messages.NoteForm;
+import demo.messages.Notes;
 import org.springframework.web.bind.annotation.*;
-import self.ed.messages.Note;
-import self.ed.messages.NoteForm;
-import self.ed.messages.Notes;
 
 import java.util.Map;
 import java.util.TreeMap;

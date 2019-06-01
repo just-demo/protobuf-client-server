@@ -11,12 +11,12 @@ response = request('POST', url('/notes'), {
     body: Buffer.from(noteForm.serializeBinary())
 });
 let note = messages.Note.deserializeBinary(response.getBody());
-console.log(note.toObject());
+console.log('1 - Created: ', note.toObject());
 
 // 2 - read
 response = request('GET', url('/notes/' + note.getId()));
 note = messages.Note.deserializeBinary(response.getBody());
-console.log(note.toObject());
+console.log('2 - Read: ', note.toObject());
 
 // 3 - update
 noteForm = new messages.NoteForm();
@@ -26,12 +26,13 @@ response = request('PUT', url('/notes/' + note.getId()), {
     body: Buffer.from(noteForm.serializeBinary())
 });
 note = messages.Note.deserializeBinary(response.getBody());
-console.log(note.toObject());
+console.log('3 - Updated: ', note.toObject());
 
 // 4 - delete
 request('DELETE', url('/notes/' + note.getId()));
+console.log('4 - Deleted: ', note.getId());
 
 // 5 - read all
 response = request('GET', url('/notes'));
 let notes = messages.Notes.deserializeBinary(response.getBody());
-console.log(notes.toObject());
+console.log('5 - Read all: ', notes.toObject());
